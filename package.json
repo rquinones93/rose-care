@@ -1,0 +1,42 @@
+{
+  "name": "rose-care",
+  "version": "1.0.0",
+  "description": "Social Media App for Caregivers",
+  "main": "app.js",
+  "scripts": {
+    "start:dev": "NODE_ENV=development DEBUG=APP_NAME:* nodemon ./bin/www",
+    "start:windev": "SET \"NODE_ENV=development\" SET DEBUG=myapp:* & nodemon ./bin/www",
+    "start": "NODE_ENV=production nodemon ./bin/www",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rquinones93/rose-care.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rquinones93/rose-care/issues"
+  },
+  "homepage": "https://github.com/rquinones93/rose-care#readme",
+  "dependencies": {
+    "bcrypt": "^3.0.4",
+    "body-parser": "^1.18.3",
+    "connect-pg-simple": "^5.0.0",
+    "cookie-parser": "^1.4.4",
+    "dotenv": "^6.2.0",
+    "express": "^4.16.4",
+    "express-session": "^1.15.6",
+    "express-validator": "^5.3.1",
+    "http": "0.0.0",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.1",
+    "nodemon": "^1.18.10",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "pg": "^7.8.1",
+    "pg-promise": "^8.5.6",
+    "sequelize": "^4.42.1",
+    "sequelize-cli": "^5.4.0"
+  }
+}

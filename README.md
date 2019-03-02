@@ -27,7 +27,7 @@ Rose Care is a Social Network centered around Caregiver Organization and Support
 ### Important: Make sure you've cloned the project & PostgreSQL Server is running before proceeding
 
 - [Windows - Using pgAdmin - Video Tutorial](https://youtu.be/EBw5E5DzAvE?t=185)
-  - Note: Create a new database called `gator_trade`. You should be finished by 5:00 in the video.
+  - Note: Create a new database called `rose_care`. You should be finished by 5:00 in the video.
 - Mac & Linux - Open your Terminal, type the following commands.
 
   ```bash
@@ -39,7 +39,7 @@ Rose Care is a Social Network centered around Caregiver Organization and Support
 - All Operating Systems
 
   - Open the project in an editor and from the base of the directory, create a file named `.env`.
-  - Within `.env` paste the following `DATABASE_URL=postgres://whoami@localhost:5432/gator_trade`.
+  - Within `.env` paste the following `DATABASE_URL=postgres://whoami@localhost:5432/rose_care`.
     - Note: `whoami` is the output of the Unix `whoami` command.
     - Note: If you created a username & password from the Windows tutorial, substitute `username:password` for `whoami`.
   - Save `.env`.

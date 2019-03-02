@@ -3,6 +3,7 @@ const expressValidator = require('express-validator');
 const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
+const path = require('path');
 // const passport = require('passport');
 // const session = require('express-session');
 // Make use of environment variables defined in .env
@@ -19,6 +20,9 @@ app.use(bodyParser.urlencoded({
   extended: false
 }));
 app.use(bodyParser.json());
+
+app.set('views', __dirname + '/views')
+app.set('view engine', 'jade')
 
 // Express Validator - Taken from Middleware Options on Github
 app.use(
@@ -41,9 +45,16 @@ app.use(
   })
 );
 
+app.get('/', function (req, res) {
+  res.render('index',
+  { title : 'Home' }
+  )
+})
+
 // Routers
 const index = require('./routes/index');
 
 app.use('/', index);
+app.use(express.static(path.join(__dirname, "public")));
 
 module.exports = app;

@@ -1,0 +1,25 @@
+doctype html
+html
+  head
+    title #{title} - Rose Care
+    //- link(rel='stylesheet', href='/stylesheets/style.css')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+  body
+    nav
+      .nav-wrapper
+        a.brand-logo.left(href='#')  Rose Care
+        ul#nav-mobile.right.hide-on-med-and-down
+          li
+            a(href='sass.html') Home
+          li
+            a(href='badges.html') Messages
+          li
+            a(href='collapsible.html') Support Groups
+          li
+            a(href='collapsible.html') Calendar
+
+    .container
+      .main-content
+        block content
+      .sidebar
+        block sidebar

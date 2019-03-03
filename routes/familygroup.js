@@ -29,4 +29,26 @@ router.post('/create', (request, response, next) => {
   });
 });
 
+// Hardcoded Due to Hackathon
+router.post('/addMedication', (request, response, next) => {
+  const familyGroupId = 1;
+  const medication = {
+    name: request.body.name,
+    description: request.body.description,
+    directions: request.body.directions,
+    expiration: request.body.expiration,
+    doctor: request.body.doctor
+  };
+
+  FamilyGroup.addMedication( familyGroupId, medication )
+    .then( () => {
+      response.status(201).send();
+    }).catch((error) => {
+      console.log(error);
+      response.status(400).json({
+        error_msg: "Unable to create Family group. Please try again. "
+      });
+    });
+});
+
 module.exports = router;

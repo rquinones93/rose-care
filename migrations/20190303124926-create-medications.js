@@ -1,27 +1,36 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('family_groups', {
+    return queryInterface.createTable('medications', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      loved_one_name: {
+      family_group_id: {
+        type: Sequelize.INTEGER,
+        allowNull: false
+      },
+      name: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      loved_one_photo: {
+      description: {
         type: Sequelize.STRING,
         allowNull: false
       },
-      medication: {
-        type: Sequelize.ARRAY(Sequelize.STRING),
-        defaultValue: []
+      directions: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
-      notes: {
-        type: Sequelize.ARRAY(Sequelize.STRING)
+      expiration: {
+        type: Sequelize.STRING,
+        allowNull: false
+      },
+      doctor: {
+        type: Sequelize.STRING,
+        allowNull: false
       },
       createdAt: {
         allowNull: false,
@@ -31,6 +40,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('family_groups');
+    return queryInterface.dropTable('medications');
   }
 };

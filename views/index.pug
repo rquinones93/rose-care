@@ -91,11 +91,35 @@ block content
               a.right.waves-effect.waves-light.btn post
 
       .card
+        ul.collection
+          li.collection-item.avatar
+            i.material-icons.circle person
+            span.title Deborah Dawkins
+            p posted Yesterday
         .card-image
           img(src="images/care_post.jpg")
         .card-content
           p Today, Deborah had a CT scan to check up on her leukemia.  She's currently in remission.
           p Go Deborah!
+        ul.collection
+          li.collection-item.avatar
+            i.material-icons.circle account_circle
+            span.title Family Member
+            p Nice to see her doing well!
+          li.collection-item.avatar
+            i.material-icons.circle account_circle
+            span.title Family Member 2
+            p Big Same!
+        .row
+          .input-field.center-align.col.s11
+            i.material-icons.prefix account_circle
+            input#icon-prefix(type='text')
+            label(for='icon_prefix') Write your comment here
+        .card-action.right-align
+         a.href('#') post
+        
+
+            
 
 
 

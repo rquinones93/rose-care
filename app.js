@@ -87,12 +87,13 @@ const signup = require('./routes/signup');
 const login = require('./routes/login');
 const logout = require('./routes/logout');
 const familygroup = require('./routes/familygroup');
+const posts = require('./routes/posts');
 
 app.use('/', index);
 app.use('/signup', signup);
 app.use('/login', login);
 app.use('/logout', logout);
 app.use('/familygroup', familygroup);
-
+app.use('/posts', posts);
 
 module.exports = app;

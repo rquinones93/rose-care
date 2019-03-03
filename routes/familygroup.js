@@ -55,6 +55,7 @@ router.post('/addMedication', (request, response, next) => {
 router.get('/getnotes', (request, response, next) => {
   FamilyGroup.getNotesById(1).then( (notes) => {
     console.log(notes);
+    response.status(200).send();
   }).catch((error) => {
     console.log(error);
     response.status(400).json({

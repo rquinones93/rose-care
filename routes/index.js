@@ -2,8 +2,14 @@
 const express = require('express');
 const router = express.Router();
 
+// twilio
+
+
 router.get('/', (request, response, next) => {
-  response.render('index',  { title : 'Home' }  );
+
+	
+
+  response.render('index'  );
 });
 
 router.get('/login', (request, response, next) => {

@@ -17,7 +17,7 @@ app.use(logger('dev'));
 
 // Get and properly parse data from Front End
 app.use(bodyParser.urlencoded({
-  extended: false
+  extended: true
 }));
 app.use(bodyParser.json());
 
@@ -57,6 +57,7 @@ const chat = require('./routes/chat');
 
 app.use('/', index);
 app.use('/chat',chat);
+
 app.use(express.static(path.join(__dirname, "public")));
 
 module.exports = app;

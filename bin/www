@@ -5,8 +5,9 @@
  */
 
 var app = require('../app');
-var debug = require('debug')('rose-case:server');
+var debug = require('debug')('rose-care:server');
 var http = require('http');
+
 // const socket = require( '../socket' );
 
 /**
@@ -23,6 +24,7 @@ app.set('port', port);
 const server = http.createServer(app);
 // socket.init( app, server )
 // app.io.attach(server);
+
 
 /**
  * Listen on provided port, on all network interfaces.

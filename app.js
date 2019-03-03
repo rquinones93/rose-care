@@ -6,6 +6,7 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const passport = require('passport');
 const session = require('express-session');
+const flash = require('connect-flash');
 // Make use of environment variables defined in .env
 require('dotenv').config();
 
@@ -27,8 +28,8 @@ app.use(
   session({
     store: new(require('connect-pg-simple')(session))(),
     secret: process.env.COOKIE_SECRET,
-    resave: false,
-    saveUninitialized: false,
+    resave: true,
+    saveUninitialized: true,
     proxy: true,
     cookie: {
       maxAge: 30 * 24 * 60 * 60 * 1000,
@@ -45,8 +46,8 @@ app.use((request, response, next) => {
   next();
 });
 
-app.set('views', __dirname + '/views')
-app.set('view engine', 'pug')
+app.set('views', __dirname + '/views');
+app.set('view engine', 'pug');
 
 // Express Validator - Taken from Middleware Options on Github
 app.use(
@@ -69,11 +70,16 @@ app.use(
   })
 );
 
-// app.get('/', function (req, res) {
-//   res.render('index',
-//   { title : 'Home' }
-//   )
-// })
+// Flash Messages
+app.use(flash());
+
+app.use(function (request, response, next) {
+  response.locals.success_msg = request.flash('success_msg');
+  response.locals.error_msg = request.flash('error_msg');
+  response.locals.error_msg = request.flash('error');
+  response.locals.user = request.user || null;
+  next();
+});
 
 // Routers
 const index = require('./routes/index');

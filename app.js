@@ -88,6 +88,7 @@ const login = require('./routes/login');
 const logout = require('./routes/logout');
 const familygroup = require('./routes/familygroup');
 const posts = require('./routes/posts');
+const home = require('./routes/home');
 
 app.use('/', index);
 app.use('/signup', signup);
@@ -95,5 +96,6 @@ app.use('/login', login);
 app.use('/logout', logout);
 app.use('/familygroup', familygroup);
 app.use('/posts', posts);
+app.use('/home', home);
 
 module.exports = app;

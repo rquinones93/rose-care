@@ -12,6 +12,7 @@
     "db:migrate": "sequelize db:migrate",
     "db:rollback": "sequelize db:migrate:undo",
     "db:create:model:users": "sequelize model:create --name users --attributes email:string,name:string,password:string,profile_picture:string,type:string",
+    "db:create:model:session": "sequelize model:create --name session --attributes sess:json",
     "db:seed:create": "sequelize seed:create --name",
     "db:seed:all": "sequelize db:seed:all",
     "db:seed:undo": "sequelize db:seed:undo --seed",

@@ -6,24 +6,24 @@ html
     script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
     link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
   body
     header
-      nav.pink.lighten-4
+      nav
         .nav-wrapper
-          a.brand-logo.left(href='#')  Rose Care
-          ul#nav-mobile.right.hide-on-med-and-down
+          //- img.left(src='/images/rose_care_nav_logo.png')
+          a.brand-logo.left(href='index.pug') Rose Care
+          ul#nav-mobile.right
             li
-              a(href='index.html') Home
+              a(href='home.pug') Home
             li
               a(href='messages.html') Messages
             li
               a(href='groups.html') Support Groups
             li
-              a(href='calendar.html') Calendar
-            li
               a(href='acount.html') Account
             li
-              a(href='collapsible.html') Logout
+              a(href='index.pug') Logout
     .container
       .main-content
         block content

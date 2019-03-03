@@ -1,6 +1,17 @@
 @import url("http://fonts.googleapis.com/css?family=Roboto");
+@import url("http://fonts.googleapis.com/css?family=Cabin");
 
 nav{
-    background-color: #F7CAC9;
+    background-color: #F2DDDE;
 
 }
+body{
+    background-color: #F8F8F8;
+}
+.brand-logo{
+    font-family:Cabin !important;
+}
+.navbar-material .nav-wrapper .brand-logo img {
+    height: 64px;
+}
+

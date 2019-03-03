@@ -7,3 +7,9 @@ router.get('/', (request, response, next) => {
   title: 'Home'
   });
 });
+
+router.get('/:familyId', (request, response, next) => {
+  response.render('index', {
+    title: 'Home'
+  });
+});

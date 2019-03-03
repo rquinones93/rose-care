@@ -90,23 +90,23 @@ html
           .brand_logo_container
             img.brand_logo(src='/images/rose_care_logo.png', alt='Logo')
         .d-flex.justify-content-center.form_container
-          form
+          form(method="POST", action="/login")
             .input-group.mb-3
               .input-group-append
                 span.input-group-text
                   i.fas.fa-user
-              input.form-control.input_user(type='text', name='', value='', placeholder='username')
+              input.form-control.input_user(type='email', name='email', placeholder='Email Address')
             .input-group.mb-2
               .input-group-append
                 span.input-group-text
                   i.fas.fa-key
-              input.form-control.input_pass(type='password', name='', value='', placeholder='password')
+              input.form-control.input_pass(type='password', name='password', placeholder='Password')
             .form-group
               .custom-control.custom-checkbox
                 input#customControlInline.custom-control-input(type='checkbox')
                 label.custom-control-label(for='customControlInline') Remember me
-        .d-flex.justify-content-center.mt-3.login_container
-          button.btn.login_btn(type='button', name='button') Login
+            .d-flex.justify-content-center.mt-3.login_container
+              button.btn.login_btn(type='submit', name='button') Login
         .mt-4
           .d-flex.justify-content-center.links
             | Don't have an account? 

@@ -24,15 +24,15 @@ passport.use(new LocalStrategy({
   (request, username, password, done) => {
     Users.getUserByEmail(username).then(user => {
       if (!user) {
-        return done(null, false, {
+        done(null, false, {
           message: "This email address is not in use."
         });
       }
       bcrypt.compare(password, user.password).then(result => {
         if (result) {
-          return done(null, user.user_id);
+          done(null, user.id);
         } else {
-          return done(null, false, {
+          done(null, false, {
             message: "Invalid password."
           });
         }

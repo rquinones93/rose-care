@@ -3,15 +3,17 @@ const router = express.Router();
 const passport = require('../auth');
 
 router.get('/', (request, response, next) => {
-  response.status(200).json({msg: "GET /login"});
+  response.render('login', {
+    title: 'Rose Care Login'
+  });
 });
 
-router.post('/', (request, response, next) => {
+router.post('/',
   passport.authenticate('local', {
-    successRedirect: '/home',
+    successRedirect: '/',
     failureRedirect: '/login',
     failureFlash: true
-  })(request, response, next);
-});
+  })
+);
 
 module.exports = router;

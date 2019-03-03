@@ -40,18 +40,17 @@ block content
     .col.s9
       .card
         .card-tabs
-          ul.tabs.tabs-fixed-width
+          ul.tabs
             li.tab
-              a(href='#text') Text
+              a.active(href='#text') Text
             li.tab
-              a.active(href='#photo') Photo
+              a(href='#photo') Photo
             li.tab
               a(href='#video') Video
         .card-content
           .row
-            form.col.s12
             .input-field.col.s12
-              textarea#textarea1.materialize-textarea
+              input(placeholder='Write you post here', type='text')
             a.waves-effect.waves-light.btn post
       .card
         .card-image

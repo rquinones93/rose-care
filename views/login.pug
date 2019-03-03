@@ -95,7 +95,7 @@ html
               .input-group-append
                 span.input-group-text
                   i.fas.fa-user
-              input.form-control.input_user(type='email', name='email', placeholder='Email Address')
+              input.form-control.input_user(type='email', name='email', placeholder='Email Address')       
             .input-group.mb-2
               .input-group-append
                 span.input-group-text
@@ -105,6 +105,10 @@ html
               .custom-control.custom-checkbox
                 input#customControlInline.custom-control-input(type='checkbox')
                 label.custom-control-label(for='customControlInline') Remember me
+            if error_msg.length > 0
+              .alert.alert-danger.alert-dismissible.fade.show(role='alert') #{error_msg}
+            if success_msg.length > 0
+              .alert.alter-danger.alert-dismissible.fade.show(rolw='alert') #{success_msg}
             .d-flex.justify-content-center.mt-3.login_container
               button.btn.login_btn(type='submit', name='button') Login
         .mt-4

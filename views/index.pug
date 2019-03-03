@@ -19,8 +19,16 @@ block content
           a.collection-item.modal-trigger(href='#modal1') Medications
                 #modal1.modal.modal-fixed-footer
                   .modal-content
-                    h4 Medications
-                    p A bunch of text
+                    each medication in medications
+                      if medication
+                        h5 =  medication.name
+                        p =  medication.description
+                        p = medication.directions
+                        p = medication.expiration
+                        p = medication.doctor
+                        br
+                      else
+                        p no medications
                     a.modal-close.waves-effect.waves-red.btn-flat(href='#!') Close           
           a.collection-item.modal-trigger(href='#notesModal') Notes
                 #notesModal.modal.modal-fixed-footer
@@ -33,8 +41,11 @@ block content
       ul.collection.with-header.events
         li.collection-header
           h6 Daily Events
-        p.collection-item Event 1
-        p.collection-item Event 2
+        each event in events
+          p.collection-item = event.description
+          //- p = event.date_of_event
+        else
+          p.collection-item No Events Today
         
       #eventModal.modal.modal-fixed-footer
         .modal-content

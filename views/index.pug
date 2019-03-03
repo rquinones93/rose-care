@@ -5,53 +5,53 @@ block content
     .col.s3
       ul.collection
         li.collection-item.avatar
-          span.title Debbie Dawkins
+          img.circle(src="images/debbie.png")
+          span.title Debbie Leone
           p Caregiver
           p 7 years
       ul.collection.with-header
         li.collection-header
           h6 Family Members
-        li.collection-item Family Member 1
-        li.collection-item Family Member 2
-        li.collection-item Family Member 3
-        li.collection-item Family Member 4
+        li.collection-item Sheldon Dawkins
+        li.collection-item Michelle Foster
+        li.collection-item Samuel Dawkins
+        li.collection-item Shelby Dawkins
       ul.collection
           a.collection-item.modal-trigger(href='#modal1') Medications
                 #modal1.modal.modal-fixed-footer
                   .modal-content
-                    each medication in medications
-                      if medication
-                        h5 =  medication.name
-                        p =  medication.description
-                        p = medication.directions
-                        p = medication.expiration
-                        p = medication.doctor
-                        br
-                      else
-                        p no medications
+                    h5 Medications
+                    p medications here.
+                    //- each medication in medications
+                    //-   if medication 
+                    //-     h5 = medication.name
+                    //-     p = medication.description
+                    //-     p = medication.directions
+                    //-     p = medication.expiration
+                    //-     p = medication.doctor
+                    //-   else
+                    //-     p no medications
                     a.modal-close.waves-effect.waves-red.btn-flat(href='#!') Close           
           a.collection-item.modal-trigger(href='#notesModal') Notes
                 #notesModal.modal.modal-fixed-footer
                   .modal-content
-                    h4 Notes
-                    p A bunch of text
+                    p notes
+                    //- each note in notes
+                    //-   p = note.description
+                    
                     a.modal-close.waves-effect.waves-red.btn-flat(href='#!') Close  
           a.collection-item(href='#!') Find Resources
           a.collection-item(href='#!') Find Support
       ul.collection.with-header.events
         li.collection-header
-          h6 Daily Events
-        each event in events
-          p.collection-item = event.description
-          //- p = event.date_of_event
-        else
-          p.collection-item No Events Today
-        
-      #eventModal.modal.modal-fixed-footer
-        .modal-content
-          h4 Events
-          p A bunch of text
-          a.modal-close.waves-effect.waves-red.btn-flat(href='#!') Close      
+          h6 Daily Evsents
+        li.collection-item
+          p Doctor's Appointment
+        //- each event in events
+        //-   if event
+        //-     p.collection-item =  event.description
+        //-   else
+        //-     p no events   
     .col.s9
       .card
         .card-tabs
@@ -90,11 +90,29 @@ block content
               input(placeholder='Write you post here', type='text')
               a.right.waves-effect.waves-light.btn post
 
+      //- each post in posts
+      //-   if post
+      //-     .card
+      //-       ul.collection
+      //-         li.collection-item.avatar
+      //-           i.material-icons.circle 
+      //-           h5 = post.name
+      //-           p = 'Posted on' + post.date
+      //-       .card-content
+      //-         p = post.description
+      //-       .row
+      //-         .input-field.center-align.col.s11
+      //-           i.material-icons.prefix account_circle
+      //-           input#icon-prefix(type='text')
+      //-           label(for='icon_prefix') Write your comment here
+      //-       .card-action.right-align
+      //-        a.href('#') post
+
       .card
         ul.collection
           li.collection-item.avatar
-            i.material-icons.circle person
-            span.title Deborah Dawkins
+            img.circle(src="images/debbie.png")
+            span.title Debbie Leone
             p posted Yesterday
         .card-image
           img(src="images/care_post.jpg")
@@ -103,12 +121,12 @@ block content
           p Go Deborah!
         ul.collection
           li.collection-item.avatar
-            i.material-icons.circle account_circle
-            span.title Family Member
+            img.circle(src="images/sheldon.png")
+            span.title Sheldon Dawkins
             p Nice to see her doing well!
           li.collection-item.avatar
-            i.material-icons.circle account_circle
-            span.title Family Member 2
+            img.circle(src="images/shelby.png")
+            span.title Shelby Dawkins
             p Big Same!
         .row
           .input-field.center-align.col.s11

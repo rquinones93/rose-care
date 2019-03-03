@@ -7,7 +7,7 @@ router.get('/', (request, response, next) => {
                FamilyGroup.getEventsById(1), Posts.getPostsByFamilyGroupId(1) ])
     .then(([medications, notes, events, posts]) => {
       console.log(medications, notes, events, posts);
-      response.render('index', {
+      response.render('home', {
         title: 'Rose Care - Home',
         medications: medications,
         notes: notes,

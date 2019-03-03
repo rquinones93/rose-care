@@ -53,8 +53,10 @@ app.use(
 
 // Routers
 const index = require('./routes/index');
+const signup = require('./routes/signup');
 
 app.use('/', index);
-app.use(express.static(path.join(__dirname, "public")));
+app.use('/signup', signup);
+
 
 module.exports = app;

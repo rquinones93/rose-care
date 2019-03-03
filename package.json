@@ -7,7 +7,15 @@
     "start:dev": "NODE_ENV=development DEBUG=APP_NAME:* nodemon ./bin/www",
     "start:windev": "SET \"NODE_ENV=development\" SET DEBUG=myapp:* & nodemon ./bin/www",
     "start": "NODE_ENV=production nodemon ./bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:create:migration": "sequelize migration:generate --name",
+    "db:migrate": "sequelize db:migrate",
+    "db:rollback": "sequelize db:migrate:undo",
+    "db:create:model:users": "sequelize model:create --name users --attributes email:string,name:string,password:string,profile_picture:string,type:string",
+    "db:seed:create": "sequelize seed:create --name",
+    "db:seed:all": "sequelize db:seed:all",
+    "db:seed:undo": "sequelize db:seed:undo --seed",
+    "db:seed:rollback": "sequelize db:seed:undo:all"
   },
   "repository": {
     "type": "git",

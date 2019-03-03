@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title #{title} - Rose Care
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js')
+    link(href='https://fonts.googleapis.com/icon?family=Material+Icons', rel='stylesheet')
+    link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
+    meta(name='viewport', content='width=device-width, initial-scale=1.0')
+  body
+    header
+      nav
+        .nav-wrapper
+          img.left(src='/images/rose_care_nav_logo.png')
+          a.brand-logo.left(href='index.pug') Rose Care
+          ul#nav-mobile.right
+            li
+              a(href='home.pug') Home
+            li
+              a(href='messages.html') Messages
+            li
+              a(href='groups.html') Support Groups
+            li
+              a(href='acount.html') Account
+            li
+              a(href='index.pug') Logout
+    .container
+      .main-content
+        block content
+      .sidebar
+        block sidebar
+    footer
+      script(src='/scripts/home.js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js')

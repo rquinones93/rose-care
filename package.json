@@ -7,7 +7,20 @@
     "start:dev": "NODE_ENV=development DEBUG=APP_NAME:* nodemon ./bin/www",
     "start:windev": "SET \"NODE_ENV=development\" SET DEBUG=myapp:* & nodemon ./bin/www",
     "start": "NODE_ENV=production nodemon ./bin/www",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "db:create:migration": "sequelize migration:generate --name",
+    "db:migrate": "sequelize db:migrate",
+    "db:rollback": "sequelize db:migrate:undo",
+    "db:create:model:users": "sequelize model:create --name users --attributes email:string,name:string,password:string,profile_picture:string,type:string",
+    "db:create:model:family_group": "sequelize model:create --name family_group --attributes loved_one_name:string,loved_one_photo:string,notes:array",
+    "db:create:model:medications": "sequelize model:create --name medications --attributes family_group_id:integer,name:string,description:string,directions:string,expiration:string,doctor:string",
+    "db:create:model:posts": "sequelize model:create --name posts --attributes family_group_id:integer,name:string,message:string",
+    "db:create:model:events": "sequelize model:create --name events --attributes family_group_id:integer,description:string,date_of_event:string",
+    "db:create:model:session": "sequelize model:create --name session --attributes sess:json",
+    "db:seed:create": "sequelize seed:create --name",
+    "db:seed:all": "sequelize db:seed:all",
+    "db:seed:undo": "sequelize db:seed:undo --seed",
+    "db:seed:rollback": "sequelize db:seed:undo:all"
   },
   "repository": {
     "type": "git",
@@ -22,13 +35,16 @@
   "dependencies": {
     "bcrypt": "^3.0.4",
     "body-parser": "^1.18.3",
+    "connect-flash": "^0.1.1",
     "connect-pg-simple": "^5.0.0",
     "cookie-parser": "^1.4.4",
     "dotenv": "^6.2.0",
     "express": "^4.16.4",
     "express-session": "^1.15.6",
     "express-validator": "^5.3.1",
+    "googleapis": "^27.0.0",
     "http": "0.0.0",
+    "jade": "^1.11.0",
     "morgan": "^1.9.1",
     "multer": "^1.4.1",
     "nodemon": "^1.18.10",
@@ -36,6 +52,7 @@
     "passport-local": "^1.0.0",
     "pg": "^7.8.1",
     "pg-promise": "^8.5.6",
+    "pug": "^2.0.3",
     "sequelize": "^4.42.1",
     "sequelize-cli": "^5.4.0"
   }

@@ -51,4 +51,16 @@ router.post('/addMedication', (request, response, next) => {
     });
 });
 
+// Testing
+router.get('/getnotes', (request, response, next) => {
+  FamilyGroup.getNotesById(1).then( (notes) => {
+    console.log(notes);
+  }).catch((error) => {
+    console.log(error);
+    response.status(400).json({
+      error_msg: "Unable to create Family group. Please try again. "
+    });
+  });
+});
+
 module.exports = router;

@@ -3,6 +3,12 @@ const express = require('express');
 const router = express.Router();
 const { Users }  = require('../database');
 
+router.get('/', (request, response, next) => {
+  response.render('signup', {
+    title: 'Rose Care Signup'
+  });
+});
+
 router.post('/', (request, response, next) => {
   const user_data = {
     email: request.body.email,

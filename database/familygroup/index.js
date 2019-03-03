@@ -4,5 +4,7 @@ module.exports = {
   getMedicationsById: require('./getMedicationsById'),
   addMedication: require('./addMedication'),
   getChannelId: require('./getChannelId'),
-  addChannelId: require('./addChannelId')
+  addChannelId: require('./addChannelId'),
+  getNotesById: require('./getNotesById'),
+  getEventsById: require('./getEventsById')
 };

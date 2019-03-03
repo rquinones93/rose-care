@@ -51,4 +51,28 @@ router.post('/addMedication', (request, response, next) => {
     });
 });
 
+// Testing
+router.get('/getnotes', (request, response, next) => {
+  FamilyGroup.getNotesById(1).then( (notes) => {
+    console.log(notes);
+    response.status(200).send();
+  }).catch((error) => {
+    console.log(error);
+    response.status(400).json({
+      error_msg: "Unable to create Family group. Please try again. "
+    });
+  });
+});
+
+router.get('/getevents', (request, response, next) => {
+  FamilyGroup.getEventsById(1).then((events) => {
+    console.log(events);
+    response.status(200).send();
+  }).catch((error) => {
+    console.log(error);
+    response.status(400).json({
+      error_msg: "Unable to get Events. Please try again. "
+    });
+  });
+});
 module.exports = router;

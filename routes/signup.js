@@ -9,18 +9,16 @@ router.post('/', (request, response, next) => {
     name: request.body.name,
     password: request.body.password,
     profile_picture: request.body.profile_picture,
-    type: request.body.type
+    type: request.body.type,
+    job_title: request.body.job_title,
+    company: request.body.company,
+    years_experience: request.body.years_experience,
+    certifications: request.body.certifications
   };
 
-  Users.create( user_data ).then( ( result ) => {
-    if( user_data.type == "Caregiver" ) {
-      const caregiver_data = {
-        job_title: request.body.job_title,
-        years_experience: request.body.years_experience,
-        certifications: JSON.stringify(request.body.certifications)
-      };
-
-      Caregiver.create( caregiver_data ).then().catch();
+  Users.create( user_data ).then( ( error ) => {
+    if( error ) {
+      response.status(406).json(error);
     }
 
     response.status(200).send();

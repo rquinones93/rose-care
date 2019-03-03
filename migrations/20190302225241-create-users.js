@@ -29,6 +29,18 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      job_title: {
+        type: Sequelize.STRING
+      }, 
+      company: {
+        type: Sequelize.STRING
+      },
+      years_experience: {
+        type: Sequelize.INTEGER
+      },
+      certifications: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         type: Sequelize.DATE,
         allowNull: false,

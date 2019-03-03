@@ -9,24 +9,55 @@ block content
           p Caregiver
           p 7 years
       ul.collection
+          a.collection-item.modal-trigger(href='#modal1') Medications
+                #modal1.modal.modal-fixed-footer
+                  .modal-content
+                    h4 Medications
+                    p A bunch of text
+                    a.modal-close.waves-effect.waves-red.btn-flat(href='#!') Close           
+          a.collection-item.modal-trigger(href='#notesModal') Notes
+                #notesModal.modal.modal-fixed-footer
+                  .modal-content
+                    h4 Notes
+                    p A bunch of text
+                    a.modal-close.waves-effect.waves-red.btn-flat(href='#!') Close  
+          a.collection-item(href='#!') Find Resources
+          a.collection-item(href='#!') Find Support
+      ul.collection
         li.collection-item
           span.title Daily Events
-          p Event 1
-          p Event 2
+          p.collection-item Event 1
+          p.collection-item Event 2
+          a.waves-effect.waves-light.btn.modal-trigger(href='#eventModal') 
+            i.material-icons.right edit
+            | edit   
+          #eventModal.modal.modal-fixed-footer
+                  .modal-content
+                    h4 Events
+                    p A bunch of text
+                    a.modal-close.waves-effect.waves-red.btn-flat(href='#!') Close      
+        
     .col.s9
       .card
         .card-tabs
           ul.tabs.tabs-fixed-width
             li.tab
-              a(href='#test4') Text
+              a(href='#text') Text
             li.tab
-              a.active(href='#test5') Photo
+              a.active(href='#photo') Photo
             li.tab
-              a(href='#test6') Video
+              a(href='#video') Video
         .card-content
           .row
             form.col.s12
             .input-field.col.s12
               textarea#textarea1.materialize-textarea
+            a.waves-effect.waves-light.btn post
+      .card
+        .card-image
+          img(src="images/care_post.jpg")
+        .card-content
+          p Today, Deborah had a CT scan to check up on her leukemia.  She's currently in remission.
+          p Go Deborah!
 
 

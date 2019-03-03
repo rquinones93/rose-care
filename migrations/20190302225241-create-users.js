@@ -29,6 +29,9 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
+      family_group_id: {
+        type: Sequelize.INTEGER
+      },
       job_title: {
         type: Sequelize.STRING
       }, 

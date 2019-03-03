@@ -4,20 +4,20 @@ const bcrypt = require('bcrypt');
 // Sequel Query
 const CREATE_USER = 
   `INSERT INTO users ( email, name, password, profile_picture, type, job_title, company, years_experience, certifications ) ` +
-  `VALUES ( $1, $2, $3, $4, $5, $6, $7, $8, $9) `;
+  `VALUES ( $1, $2, $3, $4, $5, $6, $7, $8, $9)`;
 
-const create = ( user_data ) => {
-  return bcrypt.hash(user_data.password, 10).then( ( hash ) => {
+const create = ( userData ) => {
+  return bcrypt.hash(userData.password, 10).then( ( hash ) => {
     return db.oneOrNone(CREATE_USER, [
-      user_data.email,
-      user_data.name,
+      userData.email,
+      userData.name,
       hash,
-      user_data.profile_picture,
-      user_data.type,
-      user_data.job_title,
-      user_data.company,
-      user_data.years_experience,
-      user_data.certifications
+      userData.profile_picture,
+      userData.type,
+      userData.job_title,
+      userData.company,
+      userData.years_experience,
+      userData.certifications
     ]);
   }).catch( ( error ) => {
     console.log(error);

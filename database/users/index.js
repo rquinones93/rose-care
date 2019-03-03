@@ -2,5 +2,6 @@
 module.exports = {
   create: require('./create'),
   getUserById: require('./getUserById'),
-  getUserByEmail: require('./getUserByEmail')
+  getUserByEmail: require('./getUserByEmail'),
+  updateFamilyGroup: require('./updateFamilyGroup')
 };

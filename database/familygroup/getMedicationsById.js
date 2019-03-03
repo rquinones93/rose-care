@@ -5,7 +5,7 @@ const GET_MEDICATIONS_BY_ID =
   `SELECT * FROM medications WHERE family_group_id = $1`;
 
 const getMedicationsById = (familyGroupId) => {
-  return db.many(GET_MEDICATIONS_BY_ID, [
+  return db.query(GET_MEDICATIONS_BY_ID, [
     familyGroupId
   ]);
 };

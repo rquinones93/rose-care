@@ -1,15 +1,23 @@
 const express = require('express');
 const router = express.Router();
-const passport = require('../auth');
+const { FamilyGroup, Posts } = require('../database');
 
 router.get('/', (request, response, next) => {
-  response.render('index', {
-  title: 'Home'
-  });
+  Promise.all([FamilyGroup.getMedicationsById(1), FamilyGroup.getNotesById(1),
+               FamilyGroup.getEventsById(1), Posts.getPostsByFamilyGroupId(1) ])
+    .then(([medications, notes, events, posts]) => {
+      console.log(medications, notes, events, posts);
+      response.render('index', {
+        title: 'Rose Care - Home',
+        medications: medications,
+        notes: notes,
+        events: events,
+        posts: posts
+      });
+    }).catch( (error) => {
+    console.log(error);
+    response.status(400).json(error);
+    });
 });
 
-router.get('/:familyId', (request, response, next) => {
-  response.render('index', {
-    title: 'Home'
-  });
-});
+module.exports = router;

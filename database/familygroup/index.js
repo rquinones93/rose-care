@@ -5,5 +5,6 @@ module.exports = {
   addMedication: require('./addMedication'),
   getChannelId: require('./getChannelId'),
   addChannelId: require('./addChannelId'),
-  getNotesById: require('./getNotesById')
+  getNotesById: require('./getNotesById'),
+  getEventsById: require('./getEventsById')
 };

@@ -15,6 +15,7 @@
     "db:create:model:family_group": "sequelize model:create --name family_group --attributes loved_one_name:string,loved_one_photo:string,notes:array",
     "db:create:model:medications": "sequelize model:create --name medications --attributes family_group_id:integer,name:string,description:string,directions:string,expiration:string,doctor:string",
     "db:create:model:posts": "sequelize model:create --name posts --attributes family_group_id:integer,name:string,message:string",
+    "db:create:model:events": "sequelize model:create --name events --attributes family_group_id:integer,description:string,date_of_event:string",
     "db:create:model:session": "sequelize model:create --name session --attributes sess:json",
     "db:seed:create": "sequelize seed:create --name",
     "db:seed:all": "sequelize db:seed:all",

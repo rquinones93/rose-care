@@ -5,19 +5,27 @@ html
     //- link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css')
   body
-    nav
-      .nav-wrapper
-        a.brand-logo.left(href='#')  Rose Care
-        ul#nav-mobile.right.hide-on-med-and-down
-          li
-            a(href='sass.html') Home
-          li
-            a(href='badges.html') Messages
-          li
-            a(href='collapsible.html') Support Groups
-          li
-            a(href='collapsible.html') Calendar
-
+    header
+      nav
+        .nav-wrapper
+          a.brand-logo.left(href='#')  Rose Care
+          ul#nav-mobile.right.hide-on-med-and-down
+            li
+              a(href='index.html') Home
+            li
+              a(href='messages.html') Messages
+            li
+              a(href='groups.html') Support Groups
+            li
+              a(href='calendar.html') Calendar
+            li
+              a(href='acount.html') Account
+            li
+              a(href='collapsible.html') Logout
+    aside.side-nav.nav-expanded.nav-lock.nav-collapsible
+      ul.side-nav
+      
+        
     .container
       .main-content
         block content

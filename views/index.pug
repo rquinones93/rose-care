@@ -2,21 +2,31 @@ extend layout
 
 block content
   .row 
-    .col-s3
+    .col.s3
       ul.collection
         li.collection-item.avatar
-          span 
-        
-    .col-s9
-    
+          span.title Debbie Dawkins
+          p Caregiver
+          p 7 years
+      ul.collection
+        li.collection-item
+          span.title Daily Events
+          p Event 1
+          p Event 2
+    .col.s9
+      .card
+        .card-tabs
+          ul.tabs.tabs-fixed-width
+            li.tab
+              a(href='#test4') Text
+            li.tab
+              a.active(href='#test5') Photo
+            li.tab
+              a(href='#test6') Video
+        .card-content
+          .row
+            form.col.s12
+            .input-field.col.s12
+              textarea#textarea1.materialize-textarea
 
-block sidebar
-  .widget
-    h1 Widget
-    p
-      | Sed auctor neque eu tellus rhoncus ut
-      | eleifend nibh porttitor. Ut in nulla enim.
-    
-    p
-      | Vivamus hendrerit arcu sed erat molestie
-      | vehicula.
+

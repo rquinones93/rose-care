@@ -53,8 +53,10 @@ app.use(
 
 // Routers
 const index = require('./routes/index');
+const chat = require('./routes/chat');
 
 app.use('/', index);
+app.use('/chat',chat);
 app.use(express.static(path.join(__dirname, "public")));
 
 module.exports = app;

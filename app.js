@@ -45,11 +45,11 @@ app.use(
   })
 );
 
-app.get('/', function (req, res) {
-  res.render('index',
-  { title : 'Home' }
-  )
-})
+// app.get('/', function (req, res) {
+//   res.render('index',
+//   { title : 'Home' }
+//   )
+// })
 
 // Routers
 const index = require('./routes/index');

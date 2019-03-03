@@ -23,6 +23,9 @@ module.exports = {
       notes: {
         type: Sequelize.ARRAY(Sequelize.STRING)
       },
+      channelId: {
+        type: Sequelize.STRING
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE,

@@ -2,5 +2,7 @@
 module.exports = {
   create: require('./create'),
   getMedicationsById: require('./getMedicationsById'),
-  addMedication: require('./addMedication')
+  addMedication: require('./addMedication'),
+  getChannelId: require('./getChannelId'),
+  addChannelId: require('./addChannelId')
 };

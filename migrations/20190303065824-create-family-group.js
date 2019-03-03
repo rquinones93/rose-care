@@ -16,10 +16,6 @@ module.exports = {
         type: Sequelize.STRING,
         allowNull: false
       },
-      medication: {
-        type: Sequelize.ARRAY(Sequelize.STRING),
-        defaultValue: []
-      },
       notes: {
         type: Sequelize.ARRAY(Sequelize.STRING)
       },

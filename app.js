@@ -45,6 +45,9 @@ app.use((request, response, next) => {
   next();
 });
 
+app.set('views', __dirname + '/views')
+app.set('view engine', 'pug')
+
 // Express Validator - Taken from Middleware Options on Github
 app.use(
   expressValidator({
@@ -66,6 +69,12 @@ app.use(
   })
 );
 
+// app.get('/', function (req, res) {
+//   res.render('index',
+//   { title : 'Home' }
+//   )
+// })
+
 // Routers
 const index = require('./routes/index');
 const signup = require('./routes/signup');
@@ -76,5 +85,6 @@ app.use('/', index);
 app.use('/signup', signup);
 app.use('/login', login);
 app.use('/logout', logout);
+
 
 module.exports = app;

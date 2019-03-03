@@ -8,6 +8,13 @@ block content
           span.title Debbie Dawkins
           p Caregiver
           p 7 years
+      ul.collection.with-header
+        li.collection-header
+          h6 Family Members
+        li.collection-item Family Member 1
+        li.collection-item Family Member 2
+        li.collection-item Family Member 3
+        li.collection-item Family Member 4
       ul.collection
           a.collection-item.modal-trigger(href='#modal1') Medications
                 #modal1.modal.modal-fixed-footer
@@ -23,40 +30,61 @@ block content
                     a.modal-close.waves-effect.waves-red.btn-flat(href='#!') Close  
           a.collection-item(href='#!') Find Resources
           a.collection-item(href='#!') Find Support
-      ul.collection
-        li.collection-item
-          span.title Daily Events
-          p.collection-item Event 1
-          p.collection-item Event 2
-          a.waves-effect.waves-light.btn.modal-trigger(href='#eventModal') 
-            i.material-icons.right edit
-            | edit   
-          #eventModal.modal.modal-fixed-footer
-                  .modal-content
-                    h4 Events
-                    p A bunch of text
-                    a.modal-close.waves-effect.waves-red.btn-flat(href='#!') Close      
+      ul.collection.with-header.events
+        li.collection-header
+          h6 Daily Events
+        p.collection-item Event 1
+        p.collection-item Event 2
         
+      #eventModal.modal.modal-fixed-footer
+        .modal-content
+          h4 Events
+          p A bunch of text
+          a.modal-close.waves-effect.waves-red.btn-flat(href='#!') Close      
     .col.s9
       .card
         .card-tabs
-          ul.tabs
+          ul.tabs.tabs-fixed-width
             li.tab
               a.active(href='#text') Text
             li.tab
               a(href='#photo') Photo
             li.tab
               a(href='#video') Video
-        .card-content
-          .row
-            .input-field.col.s12
+        .card-content.grey.lighten-4
+          #text 
+            .row
+              .input-field.col.s12
               input(placeholder='Write you post here', type='text')
-            a.waves-effect.waves-light.btn post
+              a.right.waves-effect.waves-light.btn post
+          #photo
+            .row
+              a.file-field.input-field
+                .btn
+                  span Browse
+                  input(type='file')
+                .file-path-wrapper
+                  input.file-path.validate(type='text' placeholder='Upload Photo')
+              .input-field.col.s12
+              input(placeholder='Write you post here', type='text')
+              a.right.waves-effect.waves-light.btn post
+          #video
+              a.file-field.input-field
+                .btn
+                  span Browse
+                  input(type='file')
+                .file-path-wrapper
+                  input.file-path.validate(type='text' placeholder='Upload Video')
+              .input-field.col.s12
+              input(placeholder='Write you post here', type='text')
+              a.right.waves-effect.waves-light.btn post
+
       .card
         .card-image
           img(src="images/care_post.jpg")
         .card-content
           p Today, Deborah had a CT scan to check up on her leukemia.  She's currently in remission.
           p Go Deborah!
+
 
 
